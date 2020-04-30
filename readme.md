@@ -1,8 +1,12 @@
-﻿This is an updated Version of Cocos2d-x 3.17 for full Windows x86 and x64 support as well as linux.
+[![Build Status](https://flyingdutchman.visualstudio.com/Cocos2d-x_WIN64/_apis/build/status/FlyingdutchmanC.Cocos2d-x_WIN64?branchName=master)](https://flyingdutchman.visualstudio.com/Cocos2d-x_WIN64/_build/latest?definitionId=21&branchName=master)Win32 and Win64 and Linux
+
+
+This is an updated Version of Cocos2d-x 3.17 for full Windows x86 and x64 support as well as linux.
 The cmake files are updated and the libraries are compiled for x64 as well.
 I have no rights on Cocos2d-x nor on the added libraries.
 The rights belong to the developer of those software modules.
 This project is just to inform how to enable x64 support to Cocos2d-x in cmake.
+
 See: https://www.cocos.com/ and https://github.com/cocos2d/cocos2d-x
 
 
