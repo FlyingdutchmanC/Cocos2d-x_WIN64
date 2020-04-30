@@ -1,0 +1,283 @@
+﻿{
+  "configurations": [
+    {
+      "name": "x86-Debug",
+      "generator": "Ninja",
+      "configurationType": "Debug",
+      "inheritEnvironments": [ "msvc_x86" ],
+      "buildRoot": "${env.USERPROFILE}\\CMakeBuilds\\${workspaceHash}\\build\\${name}",
+      "installRoot": "${env.USERPROFILE}\\CMakeBuilds\\${workspaceHash}\\install\\${name}",
+      "cmakeCommandArgs": "",
+      "buildCommandArgs": "-v",
+      "ctestCommandArgs": "",
+      "variables": [
+        {
+          "name": "BUILD_EDITOR_COCOSBUILDER",
+          "value": "False",
+          "type": "BOOL"
+        },
+        {
+          "name": "BUILD_EDITOR_COCOSTUDIO",
+          "value": "False",
+          "type": "BOOL"
+        },
+        {
+          "name": "BUILD_EDITOR_SPINE",
+          "value": "False",
+          "type": "BOOL"
+        },
+        {
+          "name": "DEBUG_MODE",
+          "value": "True",
+          "type": "BOOL"
+        },
+        {
+          "name": "EIGEN_TEST_OPENMP",
+          "value": "True",
+          "type": "BOOL"
+        }
+      ]
+    },
+    {
+      "name": "x86-Release",
+      "generator": "Ninja",
+      "configurationType": "Release",
+      "buildRoot": "${env.USERPROFILE}\\CMakeBuilds\\${workspaceHash}\\build\\${name}",
+      "installRoot": "${env.USERPROFILE}\\CMakeBuilds\\${workspaceHash}\\install\\${name}",
+      "cmakeCommandArgs": "",
+      "buildCommandArgs": "-v",
+      "ctestCommandArgs": "",
+      "inheritEnvironments": [ "msvc_x86" ],
+      "variables": [
+        {
+          "name": "BUILD_EDITOR_COCOSBUILDER",
+          "value": "False",
+          "type": "BOOL"
+        },
+        {
+          "name": "BUILD_EDITOR_COCOSTUDIO",
+          "value": "False",
+          "type": "BOOL"
+        },
+        {
+          "name": "BUILD_EDITOR_SPINE",
+          "value": "False",
+          "type": "BOOL"
+        },
+        {
+          "name": "DEBUG_MODE",
+          "value": "False",
+          "type": "BOOL"
+        },
+        {
+          "name": "BUILD_EXTENSIONS",
+          "value": "False",
+          "type": "BOOL"
+        },
+        {
+          "name": "CMAKE_CXX_FLAGS",
+          "value": "/DWIN32 /D_WINDOWS /W3 /GR /EHsc",
+          "type": "STRING"
+        },
+        {
+          "name": "CMAKE_C_FLAGS",
+          "value": "/DWIN32 /D_WINDOWS /W3",
+          "type": "STRING"
+        }
+      ],
+      "intelliSenseMode": "windows-msvc-x86"
+    },
+    {
+      "name": "x86-Release-2",
+      "generator": "Ninja",
+      "configurationType": "RelWithDebInfo",
+      "buildRoot": "${env.USERPROFILE}\\CMakeBuilds\\${workspaceHash}\\build\\${name}",
+      "installRoot": "${projectDir}\\out\\install\\${name}",
+      "cmakeCommandArgs": "",
+      "buildCommandArgs": "-v",
+      "ctestCommandArgs": "",
+      "inheritEnvironments": [ "msvc_x86" ],
+      "variables": [
+        {
+          "name": "DEBUG_MODE",
+          "value": "False",
+          "type": "BOOL"
+        },
+        {
+          "name": "BUILD_EDITOR_COCOSTUDIO",
+          "value": "False",
+          "type": "BOOL"
+        },
+        {
+          "name": "BUILD_EDITOR_COCOSBUILDER",
+          "value": "False",
+          "type": "BOOL"
+        },
+        {
+          "name": "BUILD_EDITOR_SPINE",
+          "value": "False",
+          "type": "BOOL"
+        }
+      ]
+    },
+    {
+      "name": "x64-Debug",
+      "generator": "Ninja",
+      "configurationType": "Debug",
+      "buildRoot": "${env.USERPROFILE}\\CMakeBuilds\\${workspaceHash}\\build\\${name}",
+      "installRoot": "${projectDir}\\out\\install\\${name}",
+      "cmakeCommandArgs": "",
+      "buildCommandArgs": "-v",
+      "ctestCommandArgs": "",
+      "inheritEnvironments": [ "msvc_x64_x64" ],
+      "variables": [
+        {
+          "name": "CMAKE_C_FLAGS",
+          "value": "/DWIN32 /D_WINDOWS /W3 /bigobj",
+          "type": "STRING"
+        },
+        {
+          "name": "CMAKE_CXX_FLAGS",
+          "value": "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /bigobj",
+          "type": "STRING"
+        }
+      ]
+    },
+    {
+      "name": "x64-Release",
+      "generator": "Ninja",
+      "configurationType": "Release",
+      "buildRoot": "${env.USERPROFILE}\\CMakeBuilds\\${workspaceHash}\\build\\${name}",
+      "installRoot": "${env.USERPROFILE}\\CMakeBuilds\\${workspaceHash}\\install\\${name}",
+      "cmakeCommandArgs": "",
+      "buildCommandArgs": "-v",
+      "ctestCommandArgs": "",
+      "inheritEnvironments": [ "msvc_x64_x64" ],
+      "variables": [
+        {
+          "name": "DEBUG_MODE",
+          "value": "False",
+          "type": "BOOL"
+        },
+        {
+          "name": "BUILD_EDITOR_COCOSBUILDER",
+          "value": "False",
+          "type": "BOOL"
+        },
+        {
+          "name": "BUILD_EDITOR_COCOSTUDIO",
+          "value": "False",
+          "type": "BOOL"
+        },
+        {
+          "name": "BUILD_EDITOR_SPINE",
+          "value": "False",
+          "type": "BOOL"
+        },
+        {
+          "name": "BUILD_EXTENSIONS",
+          "value": "False",
+          "type": "BOOL"
+        },
+        {
+          "name": "CMAKE_CONFIGURATION_TYPES",
+          "value": "Release",
+          "type": "STRING"
+        },
+        {
+          "name": "CMAKE_CXX_FLAGS_MINSIZEREL",
+          "value": "/MD /O1 /Ob1 /DNDEBUG",
+          "type": "STRING"
+        },
+        {
+          "name": "CMAKE_CXX_FLAGS_DEBUG",
+          "value": "/MDd /Zi /Ob0 /Od /RTC1",
+          "type": "STRING"
+        },
+        {
+          "name": "CMAKE_CXX_FLAGS_RELEASE",
+          "value": "/MD /O2 /Ob2 /DNDEBUG",
+          "type": "STRING"
+        },
+        {
+          "name": "CMAKE_CXX_FLAGS_RELWITHDEBINFO",
+          "value": "/MD /Zi /O2 /Ob1 /DNDEBUG",
+          "type": "STRING"
+        }
+      ],
+      "intelliSenseMode": "windows-msvc-x64"
+    },
+    {
+      "name": "WSL-Debug",
+      "generator": "Unix Makefiles",
+      "configurationType": "Debug",
+      "buildRoot": "${env.USERPROFILE}\\CMakeBuilds\\${workspaceHash}\\install\\${name}",
+      "installRoot": "${env.USERPROFILE}\\CMakeBuilds\\${workspaceHash}\\install\\${name}",
+      "cmakeExecutable": "/usr/bin/cmake",
+      "cmakeCommandArgs": "",
+      "buildCommandArgs": "",
+      "ctestCommandArgs": "",
+      "inheritEnvironments": [ "linux_x64" ],
+      "wslPath": "${defaultWSLPath}",
+      "addressSanitizerRuntimeFlags": "detect_leaks=0",
+      "variables": []
+    },
+    {
+      "name": "WSL-Release",
+      "generator": "Unix Makefiles",
+      "configurationType": "Release",
+      "buildRoot": "${env.USERPROFILE}\\CMakeBuilds\\${workspaceHash}\\install\\${name}",
+      "installRoot": "${env.USERPROFILE}\\CMakeBuilds\\${workspaceHash}\\install\\${name}",
+      "cmakeExecutable": "/usr/bin/cmake",
+      "cmakeCommandArgs": "",
+      "buildCommandArgs": "",
+      "ctestCommandArgs": "",
+      "inheritEnvironments": [ "linux_x64" ],
+      "wslPath": "${defaultWSLPath}",
+      "addressSanitizerRuntimeFlags": "detect_leaks=0",
+      "variables": []
+    },
+    {
+      "name": "Linux-Debug",
+      "generator": "Unix Makefiles",
+      "configurationType": "Debug",
+      "cmakeExecutable": "/usr/bin/cmake",
+      "remoteCopySourcesExclusionList": [ ".vs", ".git", "out" ],
+      "cmakeCommandArgs": "",
+      "buildCommandArgs": "",
+      "ctestCommandArgs": "",
+      "inheritEnvironments": [ "linux_x64" ],
+      "remoteMachineName": "${defaultRemoteMachineName}",
+      "remoteCMakeListsRoot": "$HOME/.vs/${projectDirName}/${workspaceHash}/src",
+      "remoteBuildRoot": "$HOME/.vs/${projectDirName}/${workspaceHash}/out/build/${name}",
+      "remoteInstallRoot": "$HOME/.vs/${projectDirName}/${workspaceHash}/out/install/${name}",
+      "remoteCopySources": true,
+      "rsyncCommandArgs": "-t --delete --delete-excluded",
+      "remoteCopyBuildOutput": false,
+      "remoteCopySourcesMethod": "rsync",
+      "addressSanitizerRuntimeFlags": "detect_leaks=0",
+      "variables": []
+    },
+    {
+      "name": "Linux-Release",
+      "generator": "Unix Makefiles",
+      "configurationType": "RelWithDebInfo",
+      "cmakeExecutable": "/usr/bin/cmake",
+      "remoteCopySourcesExclusionList": [ ".vs", ".git", "out" ],
+      "cmakeCommandArgs": "",
+      "buildCommandArgs": "",
+      "ctestCommandArgs": "",
+      "inheritEnvironments": [ "linux_x64" ],
+      "remoteMachineName": "${defaultRemoteMachineName}",
+      "remoteCMakeListsRoot": "$HOME/.vs/${projectDirName}/${workspaceHash}/src",
+      "remoteBuildRoot": "$HOME/.vs/${projectDirName}/${workspaceHash}/out/build/${name}",
+      "remoteInstallRoot": "$HOME/.vs/${projectDirName}/${workspaceHash}/out/install/${name}",
+      "remoteCopySources": true,
+      "rsyncCommandArgs": "-t --delete --delete-excluded",
+      "remoteCopyBuildOutput": false,
+      "remoteCopySourcesMethod": "rsync",
+      "addressSanitizerRuntimeFlags": "detect_leaks=0",
+      "variables": []
+    }
+  ]
+}

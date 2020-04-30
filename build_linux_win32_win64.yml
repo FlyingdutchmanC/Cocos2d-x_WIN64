@@ -1,0 +1,81 @@
+trigger:
+- master
+
+jobs:
+- job: linux  # name of the job (A-Z, a-z, 0-9, and underscore)
+  displayName: Linux build  # friendly name to display in the UI
+  pool:
+    vmImage: 'ubuntu-latest'
+
+  steps:
+    - task: Bash@3
+      inputs:
+        targetType: 'inline'
+        script: 'sudo apt update'
+
+    - task: Bash@3
+      inputs:
+        targetType: 'inline'
+        script: 'sudo apt upgrade -y'
+
+    - task: Bash@3
+      inputs:
+        targetType: 'inline'
+        script: 'sudo apt install --fix-missing -y zlib1g-dbg zlib1g-dev libsqlite3-dev libpng-dev libcurl4-gnutls-dev libgtk-3-dev pkg-config glew-utils libglew-dev'
+        
+    - task: Bash@3
+      inputs:
+        targetType: 'inline'
+        script: |
+          mkdir build
+          cd build 
+          cmake ../.
+          make
+
+- job: windowsx86  # name of the job (A-Z, a-z, 0-9, and underscore)
+  displayName: Windows x86 debug build  # friendly name to display in the UI
+  pool:
+    vmImage: 'windows-latest'
+
+  variables:
+    solution: '**/RobotSimulator.sln'
+    buildPlatform: 'win32'
+    buildConfiguration: 'Debug'
+
+  steps:
+  - task: NuGetToolInstaller@1
+
+  - task: CMake@1
+    inputs:
+      workingDirectory: 
+      cmakeArgs: '-B build -A win32 -DCMAKE_BUILD_TYPE=Debug'
+
+  - task: VSBuild@1
+    inputs:
+      solution: '$(solution)'
+      platform: '$(buildPlatform)'
+      configuration: '$(buildConfiguration)'
+
+- job: windowsx64  # name of the job (A-Z, a-z, 0-9, and underscore)
+  displayName: Windows x64 release build  # friendly name to display in the UI
+  pool:
+    vmImage: 'windows-latest'
+
+  variables:
+    solution: '**/RobotSimulator.sln'
+    buildPlatform: 'x64'
+    buildConfiguration: 'Release'
+
+  steps:
+  - task: NuGetToolInstaller@1
+
+  - task: CMake@1
+    inputs:
+      workingDirectory: 
+      cmakeArgs: '-B build -A x64 -DCMAKE_BUILD_TYPE=Release'
+
+  - task: VSBuild@1
+    inputs:
+      solution: '$(solution)'
+      platform: '$(buildPlatform)'
+      configuration: '$(buildConfiguration)'
