@@ -38,7 +38,7 @@ jobs:
     vmImage: 'windows-latest'
 
   variables:
-    solution: '**/RobotSimulator.sln'
+    solution: '**/Win64App.sln'
     buildPlatform: 'win32'
     buildConfiguration: 'Debug'
 
@@ -62,7 +62,7 @@ jobs:
     vmImage: 'windows-latest'
 
   variables:
-    solution: '**/RobotSimulator.sln'
+    solution: '**/Win64App.sln'
     buildPlatform: 'x64'
     buildConfiguration: 'Release'
 
